@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"path/filepath"
+
+	"github.com/cjdenio/ffgen/pkg/fontfile"
 	"github.com/cjdenio/ffgen/pkg/help"
 )
 
@@ -14,9 +17,21 @@ func main() {
 		return
 	}
 
-	directory := os.Args[1]
-	file := os.Args[2]
+	// Convert arguments to absolute paths
+	directory, _ := filepath.Abs(os.Args[1])
+	file, _ := filepath.Abs(os.Args[2])
 
-	fmt.Println(directory)
-	fmt.Println(file)
+	// Get path of CSS file
+	path := filepath.Dir(file)
+
+	// Scan directory for font files
+	files, err := fontfile.SearchDirectory(directory)
+
+	fmt.Printf("ℹ️  Found %d font files\n", len(files))
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(files[1].CssRule(path))
 }
