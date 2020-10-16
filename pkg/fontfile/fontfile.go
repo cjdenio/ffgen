@@ -18,5 +18,6 @@ func (fontFile FontFile) CssRule(cssFilePath string) string {
 	return fmt.Sprintf(`@font-face {
   font-family: "%s";
   src: url("%s");
-}`, fontFile.Name, relativePath)
+  font-weight: %d;
+}`, fontFile.Name, relativePath, fontFile.Weight)
 }

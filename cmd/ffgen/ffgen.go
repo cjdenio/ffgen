@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 
 	"github.com/cjdenio/ffgen/pkg/fontfile"
+	"github.com/cjdenio/ffgen/pkg/gen"
 	"github.com/cjdenio/ffgen/pkg/help"
 )
 
@@ -33,5 +34,5 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(files[1].CssRule(path))
+	fmt.Println(gen.GenerateRules(files, path))
 }
