@@ -19,5 +19,6 @@ func (fontFile FontFile) CssRule(cssFilePath string) string {
   font-family: "%s";
   src: url("%s");
   font-weight: %d;
-}`, fontFile.Name, relativePath, fontFile.Weight)
+  font-style: %s;
+}`, fontFile.Name, relativePath, fontFile.Weight, map[bool]string{true: "italic", false: "normal"}[fontFile.Italic])
 }

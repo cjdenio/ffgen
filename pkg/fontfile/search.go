@@ -75,5 +75,6 @@ func parseFile(basepath string, file os.FileInfo) (FontFile, bool) {
 		Path:   filepath.Join(basepath, file.Name()),
 		Name:   match[1],
 		Weight: weight,
+		Italic: weightMatch[2] != "",
 	}, true
 }
