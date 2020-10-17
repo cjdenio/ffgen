@@ -1,3 +1,4 @@
+<!-- DO NOT REMOVE - contributor_list:data:start:["cjdenio"]:end -->
 # 🎨 ffgen
 
 > @font-face generator for CSS!
@@ -27,3 +28,11 @@ make
 ```
 
 The built binary will be placed in the `bin/` directory.
+
+<!-- DO NOT REMOVE - contributor_list:start -->
+## 👥 Contributors
+
+
+- **[@cjdenio](https://github.com/cjdenio)**
+
+<!-- DO NOT REMOVE - contributor_list:end -->
